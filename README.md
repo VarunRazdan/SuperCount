@@ -1,99 +1,77 @@
-# 📚 SuperCount
+# SuperCount
 
 > Analyze word count and character frequency for any text file — books, articles, scripts, and more.
 
 [![Latest Release](https://img.shields.io/github/v/release/VarunRazdan/SuperCount)](https://github.com/VarunRazdan/SuperCount/releases)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/VarunRazdan/supercount/pulls)
-
----
-
-## Demo
-
-<!-- TODO: Record a demo GIF with `asciinema` or `terminalizer` and embed it here -->
-
-```
-=========== SUPERCOUNT ===========
-Analyzing: books/frankenstein.txt
------------ Word Count -----------
-Found 78094 total words
---------- Character Count --------
-e: 46043
-t: 30365
-a: 26743
-o: 25985
-i: 25226
-n: 24433
-s: 23110
-...
-============== END ===============
-```
 
 ---
 
 ## Features
 
-- **Word count** — total words in any `.txt` file
-- **Character frequency** — sorted breakdown of all alphabetic characters
-- **Multi-file support** — analyze several files in one command
-- **Glob patterns** — use `books/*.txt` to process entire directories at once
-- **Zero dependencies** — pure Python standard library, no installs needed beyond Python itself
-- **Fast** — processes full-length novels in milliseconds
+- Word count and character frequency for any `.txt` file
+- Analyze multiple files at once
+- Glob pattern support (e.g. `*.txt`)
+- No dependencies — pure Python standard library
 
 ---
 
-## Installation
+## Getting Started
 
-### Download a pre-built binary (no Python needed)
+### Option 1: Download the binary (no Python needed)
 
-Go to the [Releases page](https://github.com/VarunRazdan/SuperCount/releases) and download the binary for your OS:
+1. Go to the [Releases page](https://github.com/VarunRazdan/SuperCount/releases)
+2. Download the file for your OS:
 
-| Platform | File |
-|----------|------|
-| macOS    | `supercount-macos` |
-| Linux    | `supercount-linux` |
-| Windows  | `supercount-windows.exe` |
+| OS      | File                     |
+|---------|--------------------------|
+| macOS   | `supercount-macos`       |
+| Linux   | `supercount-linux`       |
+| Windows | `supercount-windows.exe` |
 
-**macOS/Linux:** make it executable first:
+3. Run it:
+
+**macOS / Linux** — open a terminal in the folder where you downloaded it:
 ```bash
-chmod +x supercount-macos  # or supercount-linux
-./supercount-macos <file.txt>
+chmod +x supercount-macos
+./supercount-macos myfile.txt
 ```
 
-### Python users (clone & run)
+**Windows** — open Command Prompt in the folder where you downloaded it:
+```
+supercount-windows.exe myfile.txt
+```
+
+> Don't have a file handy? Just run the binary with no arguments and it will prompt you to enter a path.
+
+---
+
+### Option 2: Run from source (requires Python 3)
+
 ```bash
 git clone https://github.com/VarunRazdan/SuperCount.git
 cd SuperCount
-python3 main.py <file.txt>
+python3 main.py myfile.txt
 ```
 
 ---
 
-## Usage
+## Usage Examples
 
-### Single file
-
+**Single file:**
 ```bash
-supercount <file.txt>
+./supercount-macos myfile.txt
 ```
 
-### Multiple files
-
+**Multiple files:**
 ```bash
-supercount <file1.txt> <file2.txt>
+./supercount-macos file1.txt file2.txt
 ```
 
-### Glob pattern
-
+**All `.txt` files in a folder:**
 ```bash
-supercount <dir>/*.txt
-```
-
-### Recursive glob
-
-```bash
-supercount "<dir>/**/*.txt"
+./supercount-macos books/*.txt
 ```
 
 ---
@@ -102,7 +80,7 @@ supercount "<dir>/**/*.txt"
 
 ```
 =========== SUPERCOUNT ===========
-Analyzing: books/frankenstein.txt
+Analyzing: frankenstein.txt
 ----------- Word Count -----------
 Found 78094 total words
 --------- Character Count --------
@@ -113,9 +91,6 @@ o: 25985
 i: 25226
 n: 24433
 s: 23110
-r: 21631
-h: 20092
-l: 14580
 ...
 ============== END ===============
 ```
