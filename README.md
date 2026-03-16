@@ -58,14 +58,14 @@ Go to the [Releases page](https://github.com/VarunRazdan/SuperCount/releases) an
 **macOS/Linux:** make it executable first:
 ```bash
 chmod +x supercount-macos  # or supercount-linux
-./supercount-macos path/to/books/frankenstein.txt
+./supercount-macos <path/to/file.txt>
 ```
 
 ### Python users (clone & run)
 ```bash
 git clone https://github.com/VarunRazdan/SuperCount.git
 cd SuperCount
-python3 main.py books/frankenstein.txt
+python3 main.py <path/to/file.txt>
 ```
 
 ---
@@ -75,25 +75,25 @@ python3 main.py books/frankenstein.txt
 ### Single file
 
 ```bash
-supercount path/to/books/frankenstein.txt
+supercount <path/to/file.txt>
 ```
 
 ### Multiple files
 
 ```bash
-supercount path/to/books/frankenstein.txt path/to/books/mobydick.txt
+supercount <path/to/file1.txt> <path/to/file2.txt>
 ```
 
 ### Glob pattern
 
 ```bash
-supercount path/to/books/*.txt
+supercount <path/to/dir>/*.txt
 ```
 
 ### Recursive glob
 
 ```bash
-supercount "path/to/books/**/*.txt"
+supercount "<path/to/dir>/**/*.txt"
 ```
 
 ---
