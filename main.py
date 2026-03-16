@@ -23,20 +23,24 @@ def analyze_book(path):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: supercount <path_or_glob> [path_or_glob ...]")
-        print("Examples:")
-        print("  supercount books/frankenstein.txt")
-        print("  supercount books/*.txt")
-        print("  supercount book1.txt book2.txt book3.txt")
-        sys.exit(1)
+        print("=========== SUPERCOUNT ===========")
+        print("No file provided. Enter a file path or glob pattern.")
+        print("Examples: books/frankenstein.txt  |  books/*.txt")
+        path = input("Path: ").strip()
+        if not path:
+            print("No path entered. Exiting.")
+            sys.exit(1)
+        args = [path]
+    else:
+        args = sys.argv[1:]
 
     files = []
-    for pattern in sys.argv[1:]:
+    for pattern in args:
         expanded = glob.glob(pattern, recursive=True)
         if expanded:
             files.extend(sorted(expanded))
         else:
-            files.append(pattern)  # pass-through so OS gives a clear FileNotFoundError
+            files.append(pattern)
 
     for path in files:
         analyze_book(path)

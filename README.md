@@ -2,7 +2,7 @@
 
 > Analyze word count and character frequency for any text file — books, articles, scripts, and more.
 
-[![PyPI version](https://img.shields.io/pypi/v/supercount.svg)](https://pypi.org/project/supercount/)
+[![Latest Release](https://img.shields.io/github/v/release/VarunRazdan/SuperCount)](https://github.com/VarunRazdan/SuperCount/releases)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/VarunRazdan/supercount/pulls)
@@ -45,23 +45,26 @@ s: 23110
 
 ## Installation
 
-### Recommended: pipx (isolated, globally available)
+### Download a pre-built binary (no Python needed)
 
+Go to the [Releases page](https://github.com/VarunRazdan/SuperCount/releases) and download the binary for your OS:
+
+| Platform | File |
+|----------|------|
+| macOS    | `supercount-macos` |
+| Linux    | `supercount-linux` |
+| Windows  | `supercount-windows.exe` |
+
+**macOS/Linux:** make it executable first:
 ```bash
-pipx install supercount
+chmod +x supercount-macos  # or supercount-linux
+./supercount-macos books/frankenstein.txt
 ```
 
-### pip
-
+### Python users (clone & run)
 ```bash
-pip install supercount
-```
-
-### Clone & run locally
-
-```bash
-git clone https://github.com/VarunRazdan/supercount.git
-cd supercount
+git clone https://github.com/VarunRazdan/SuperCount.git
+cd SuperCount
 python main.py books/frankenstein.txt
 ```
 
